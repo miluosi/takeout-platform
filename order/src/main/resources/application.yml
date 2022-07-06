@@ -1,0 +1,39 @@
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8081
+mptest:
+  jwt:
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    expire: 604800
+    header: Authorization
+spring:
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://120.46.157.46:3306/order?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    #username: mz
+    #password: Mz0215tj_
+    url: jdbc:mysql://localhost:3306/order?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: mz0215tj
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 3
+    #password: mz0215tj
+    pool:
+      minIdle: 1
+      maxIdle: 10
+      maxWait: 3
+      maxActive: 8
+  thymeleaf:
+    cache: false #关闭缓存
+    mode: HTML5 #设置模板类型
+    encoding: utf-8
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
